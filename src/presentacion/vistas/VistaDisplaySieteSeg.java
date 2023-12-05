@@ -162,7 +162,7 @@ public class VistaDisplaySieteSeg extends JPanel {
         }
 
         // De lo contrario, tenemos un número negativo.
-        VistaDisplaySieteSeg.this.setValor((byte) (128 - (0b01111111 & val)), false);
+        VistaDisplaySieteSeg.this.setValor((int) (128 - (0b01111111 & val)), false);
         setImagen(4, -1);
 
     }
@@ -179,8 +179,8 @@ public class VistaDisplaySieteSeg extends JPanel {
         return valor;
     }
 
-    public void setByteValor(byte byteVal) {
-        this.valor = byteVal;
+    public void setByteValor(int intVal) {
+        this.valor = intVal;
     }
 
     public JButton getBtnCambioModo() {

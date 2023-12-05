@@ -12,6 +12,10 @@ public class Registro8Bit implements IRegistro {
 
     @Override
     public void setValor(int v) {
+        // Asegúrese de que la entrada sea de 8 bits
+        if (v > 0b11111111) {
+            throw new RuntimeException();
+        }
         this.valor = v;
     }
 

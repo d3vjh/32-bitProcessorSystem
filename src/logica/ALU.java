@@ -23,21 +23,21 @@ public class ALU {
         // Calcula es estado de Zero
         int resultado;
         if (sub) {
-            resultado = (this.registroA.getValor())
-                    - (this.registroB.getValor());
+            resultado = (0b0000000000000000000000001111111111111111 & this.registroA.getValor())
+                    - (0b0000000000000000000000001111111111111111 & this.registroB.getValor());
         } else {
-            resultado = (this.registroA.getValor())
-                    + (this.registroB.getValor());
+            resultado = (0b0000000000000000000000001111111111111111 & this.registroA.getValor())
+                    + (0b0000000000000000000000001111111111111111 & this.registroB.getValor());
         }
 
-        if ((resultado) == 0) {
+        if ((resultado & 0b1111111111111111) == 0) {
             zF = true;
         } else {
             zF = false;
         }
 
         // Calcula el estado de Acarreo
-        if ((resultado) == 0) {
+        if ((resultado & 0b10000000000000000) == 0) {
             cF = false;
         } else {
             cF = true;
@@ -48,11 +48,11 @@ public class ALU {
     }
 
     // Devuelve el valor actual de la ALU sin el estado
-    public byte ALUOut(boolean sub) {
+    public int ALUOut(boolean sub) {
         if (sub) {
-            return (byte) (this.registroA.getValor() - this.registroB.getValor());
+            return (int) (this.registroA.getValor() - this.registroB.getValor());
         } else {
-            return (byte) (this.registroA.getValor() + this.registroB.getValor());
+            return (int) (this.registroA.getValor() + this.registroB.getValor());
         }
     }
 

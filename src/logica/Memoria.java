@@ -9,9 +9,9 @@ import interfaces.IRegistro;
 
 public class Memoria {
     
-    private int capacidadMemoria; // capacidad de la memoria en bytes
+    private int capacidadMemoria; // capacidad de la memoria en ints
     
-    // Mantener los valores de RAM como un arreglo de bytes
+    // Mantener los valores de RAM como un arreglo de enteros
     private int[] data;
 
     // La memoria mantiene el direccionamiento como una referencia al registro de direcciones de memoria.
@@ -21,15 +21,14 @@ public class Memoria {
     private List<IRAMObserver> observers;
 
     public Memoria(IRegistro MAR) {
-        capacidadMemoria = 32;
-        
-        this.data = new int[capacidadMemoria];
+        capacidadMemoria = 64; 
+        this.data = new int[capacidadMemoria]; //2048 bits
         this.MAR = MAR;
         this.observers = new ArrayList<IRAMObserver>();
 
         // Cargar valores basura en la memoria (para probar)
         for (int i = 0; i < 16; i++) {
-            this.data[i] = ThreadLocalRandom.current().nextInt(0, 254);
+            this.data[i] = (int) ThreadLocalRandom.current().nextInt(0, 254);
         }
 
     }
@@ -46,7 +45,7 @@ public class Memoria {
     }
 
     // Cambia manualmente una dirección de memoria (utilizada en WidgetRAM)
-    public void cambiarValor(int address, byte newVal) {
+    public void cambiarValor(int address, int newVal) {
         this.data[address] = newVal;
         this.notifyObservers(address);
     }

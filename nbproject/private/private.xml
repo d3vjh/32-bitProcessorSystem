@@ -3,31 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/SistemaSAP.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/interfaces/ILogObserver.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/ALU.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/vistas/VistaDisplaySieteSeg.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/controladores/ControladorWidgetRAM.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/vistas/VistaPanelCPU.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/controladores/ControlAssembler.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/Modelo.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/interfaces/IRegistro.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/controladores/ControlPanelCPU.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/Memoria.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/ProgramCounter.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/interfaces/IClockObserver.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/vistas/VistaWidgetSAP.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/Launcher.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/Registro8Bit.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/controladores/ControladorWindgetSAP.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/vistas/VistaWidgetRAM.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/RegistroEstados.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/HiloReloj.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/Registro4Bit.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/interfaces/SAPObserver.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/presentacion/controladores/ControlDisplaySieteSeg.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/interfaces/IRAMObserver.java</file>
-            <file>file:/D:/Documents/UD/OneDrive/OneDrive%20-%20Universidad%20Distrital%20Francisco%20José%20de%20Caldas/2023-3/Arquitectura%20de%20Computadores/32-bitProcessorSystem/src/logica/Clock.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Pila.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/controladores/ControladorWidgetRAM.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/ALU.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Registro24Bit.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/Modelo.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/SistemaSAP.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/RegistroPunteroF.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/controladores/ControlPanelCPU.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/RegistroEstados.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/controladores/ControladorWindgetSAP.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/EventLog.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Registro8Bit.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/vistas/VistaPanelCPU.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/interfaces/IRAMObserver.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/interfaces/ILogObserver.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/RegistroPunteroI.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Registro16Bit.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Registro6Bit.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/interfaces/IClockObserver.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Registro4Bit.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/HiloReloj.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/controladores/ControlAssembler.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/vistas/VistaWidgetSAP.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/interfaces/IRegistro.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/interfaces/SAPObserver.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Clock.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/ProgramCounter.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/logica/Memoria.java</file>
+            <file>file:/D:/Downloads/SAP-1/src/presentacion/vistas/VistaWidgetRAM.java</file>
         </group>
     </open-files>
 </project-private>

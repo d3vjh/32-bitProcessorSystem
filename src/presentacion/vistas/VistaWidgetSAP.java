@@ -7,21 +7,12 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 
 import presentacion.Modelo;
-import presentacion.controladores.ControladorWidgetRAM;
 
 @SuppressWarnings("serial")
 public class VistaWidgetSAP extends JPanel{
@@ -42,15 +33,6 @@ public class VistaWidgetSAP extends JPanel{
     private JLabel lblBus;
     private JLabel lblStepCt;
     private JLabel lblFlags;
-    
-    private JButton Opciones1;
-    private JComboBox<String> comboOperaciones;
-    private JComboBox<String> comboRegistro1;
-    private JComboBox<String> comboRegistro2;
-    private JTextField textField;
-    private JButton btnEnviar;
-
-
 
     private JLabel[] btns_bitsA;
     private JLabel[] btns_bitsB;
@@ -68,16 +50,14 @@ public class VistaWidgetSAP extends JPanel{
     private VistaWidgetRAM ramWidget;
 
     private ControladorWindgetSAP control;
-    private ControladorWidgetRAM control2;
-
     
     // Constantes
     public static final Dimension BUTTON_SIZE = new Dimension(22, 22);
-    public static final Dimension WIDGET_SIZE = new Dimension(20525, 20700);
+    public static final Dimension WIDGET_SIZE = new Dimension(625, 500);
     public static final Color BUTTON_UNSELECTED_BG = new Color(238, 238, 238);
-    public static final Color BUTTON_SELECTED_BG = new Color(255, 85, 85);
-    public static final Color COLOR_BACKGROUND = new Color(253, 247, 124 );
-    public static final Color WIDGET_BORDER_COLOR = Color.BLACK;
+    public static final Color BUTTON_SELECTED_BG = new Color(113, 76, 201);
+    public static final Color COLOR_BACKGROUND = new Color(224, 224, 224);
+    public static final Color WIDGET_BORDER_COLOR = Color.black;
     
     private final Modelo modelo;    
 
@@ -107,8 +87,8 @@ public class VistaWidgetSAP extends JPanel{
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridy = 0;
         this.lblBus = new JLabel("BUS");
-        this.add(this.lblBus, c);    
-        
+        this.add(this.lblBus, c);
+
         // Etiquetas de registros
         c.gridwidth = 1;
         c.gridy = 2;
@@ -196,35 +176,7 @@ public class VistaWidgetSAP extends JPanel{
         c.gridx = 0;
         this.lblFlags = new JLabel("Flags");
         this.add(this.lblFlags, c);
-        
-         // Opciones
-        c.gridx = 0;
-        c.gridy = 22;
-        c.gridwidth = 12;
-        this.add(new JLabel("Operacion"), c);
-        c.gridwidth = 1;
-        
-        // Registro 1 
-        c.gridx = 0;
-        c.gridy = 24;
-        c.gridwidth = 12;
-        this.add(new JLabel("Registro 1 "), c);
-        c.gridwidth = 1;
-        
-         // Espacio de memoria
-        c.gridx = 0;
-        c.gridy = 26;
-        c.gridwidth = 12;
-        this.add(new JLabel("Espacio de memoria"), c);
-        c.gridwidth = 1;
 
-        // Registro 2
-        c.gridx = 0;
-        c.gridy = 28;
-        c.gridwidth = 12;
-        this.add(new JLabel("Registro 2"), c);
-        c.gridwidth = 1;
-        
         // Prepara espacio display 
         c.anchor = GridBagConstraints.EAST;
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -249,27 +201,25 @@ public class VistaWidgetSAP extends JPanel{
         this.btns_bitsControl[14] = crearLabel("J");
         this.btns_bitsControl[15] = crearLabel("FI");
 
-        c.gridy = 8;
+        c.gridy = 18;
         for (int i = 0; i < 16; i++) {
             btns_bitsControl[i].setBackground(BUTTON_UNSELECTED_BG);
-            if (i == 16) {
+            if (i == 8) {
                 c.gridy++;
                 c.gridx = 1;
-            } else if (i >= 16) {
+            } else if (i >= 8) {
                 c.gridx = i - 7;
             } else {
                 c.gridx = i + 1;
             }
-            c.gridy = 18;
             this.add(this.btns_bitsControl[i], c);
         }
 
         //  BUS 
         c.gridy = 0;
         c.gridx = 1;
-        //AQUI SE EDITAN LOS TAMAÑOS CAMBIAR EL TAMAÑO DEL ARRAY Y EL CICLO FOR 
-        btns_bistBUS = new JLabel[32];
-        for (int i = 0; i <= 31; i++) {
+        btns_bistBUS = new JLabel[17];
+        for (int i = 0; i <= 16; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -279,8 +229,8 @@ public class VistaWidgetSAP extends JPanel{
         //  A 
         c.gridy = 2;
         c.gridx = 1;
-        btns_bitsA = new JLabel[32];
-        for (int i = 0; i <= 31; i++) {
+        btns_bitsA = new JLabel[16];
+        for (int i = 0; i <= 15; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -290,8 +240,8 @@ public class VistaWidgetSAP extends JPanel{
         // B 
         c.gridy = 4;
         c.gridx = 1;
-        btns_bitsB = new JLabel[32];
-        for (int i = 0; i <= 31; i++) {
+        btns_bitsB = new JLabel[16];
+        for (int i = 0; i <= 15; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -301,8 +251,8 @@ public class VistaWidgetSAP extends JPanel{
         //  ALU 
         c.gridy = 6;
         c.gridx = 1;
-        btns_bitsALU = new JLabel[32];
-        for (int i = 0; i <= 31; i++) {
+        btns_bitsALU = new JLabel[16];
+        for (int i = 0; i <= 15; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -312,8 +262,8 @@ public class VistaWidgetSAP extends JPanel{
         //  IR 
         c.gridy = 8;
         c.gridx = 1;
-        btns_bitsIR = new JLabel[32];
-        for (int i = 0; i <= 31; i++) {
+        btns_bitsIR = new JLabel[16];
+        for (int i = 0; i <= 15; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -323,8 +273,8 @@ public class VistaWidgetSAP extends JPanel{
         //  out 
         c.gridy = 12;
         c.gridx = 1;
-        btns_bitsOUT = new JLabel[32];
-        for (int i = 0; i <= 31; i++) {
+        btns_bitsOUT = new JLabel[16];
+        for (int i = 0; i <= 15; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -334,8 +284,8 @@ public class VistaWidgetSAP extends JPanel{
         //  PC
         c.gridy = 10;
         c.gridx = 1;
-        btns_bitsPC = new JLabel[16];
-        for (int i = 0; i <= 15; i++) {
+        btns_bitsPC = new JLabel[6];
+        for (int i = 0; i <= 5; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -345,8 +295,8 @@ public class VistaWidgetSAP extends JPanel{
         //  MAR
         c.gridy = 14;
         c.gridx = 1;
-        btns_bitsMAR = new JLabel[16];
-        for (int i = 0; i <= 15; i++) {
+        btns_bitsMAR = new JLabel[7];
+        for (int i = 0; i <= 6; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);
@@ -361,102 +311,7 @@ public class VistaWidgetSAP extends JPanel{
         c.gridx = 2;
         this.btnZero = crearLabel("Z");
         this.add(this.btnZero, c);
-        
-         //  Operacion        
-        c.gridx = 1;
-        c.gridy = 22;
-        c.gridwidth = 1;
-        comboOperaciones = new JComboBox<>();
-        comboOperaciones.addItem("No operacion");
-        comboOperaciones.addItem("Suma");
-        comboOperaciones.addItem("Resta");
-        comboOperaciones.addItem("Multiplicación");
-        comboOperaciones.addItem("División");
-        this.add(comboOperaciones, c);
-  
-       comboOperaciones.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        // Acciones a realizar cuando se selecciona una operación en el JComboBox
-        String operacionSeleccionada = comboOperaciones.getSelectedItem().toString();
-        if(operacionSeleccionada == "Suma"){
-                    System.out.println("Si funciona xddddddddddddddddddd");
-        }
-    }
-});
-          
-       //  Registro 1     
-        comboRegistro1 = new JComboBox<>();
-        c.gridx = 1;
-        c.gridy = 24;
-        c.gridwidth = 1;
-        comboRegistro1.addItem("No registro");
-        comboRegistro1.addItem("Registro A");
-        comboRegistro1.addItem("Registro B");
-        comboRegistro1.addItem("Registro C");
-        comboRegistro1.addItem("Registro D");
-        this.add(comboRegistro1, c);
-  
-       comboRegistro1.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        // Acciones a realizar cuando se selecciona una operación en el JComboBox
-        String operacionSeleccionada = comboRegistro1.getSelectedItem().toString();
-        if(operacionSeleccionada == "Registro A"){
-                    
-        }
-    }
-});
-       
-       
-       //Espacio de memoria 
-       
-       c.gridx = 1;
-       c.gridy = 26;
-       textField = new JTextField(10); 
-       this.add(textField, c);
-              
-       //Registro 2 
-      
-        c.gridx = 1;
-        c.gridy = 28;
-        comboRegistro2 = new JComboBox<>();
-        comboRegistro2.addItem("No registro");
-        comboRegistro2.addItem("Registro A");
-        comboRegistro2.addItem("Registro B");
-        comboRegistro2.addItem("Registro C");
-        comboRegistro2.addItem("Registro D");
-        this.add(comboRegistro2, c);
-  
-       comboRegistro2.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        // Acciones a realizar cuando se selecciona una operación en el JComboBox
-        String operacionSeleccionada = comboRegistro2.getSelectedItem().toString();
-        if(operacionSeleccionada == "Registro E"){
-                    
-        }
-    }
-}); 
-       
-       //boton envio
-        c.gridx = 3;
-        c.gridy = 22;
-        c.gridheight = 1;
-        c.gridwidth = 5;
-    btnEnviar = new JButton("Enviar");
-    btnEnviar.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // Acciones a realizar cuando se presiona el botón Enviar
-        procesarEnvio();
-    }
-});
-    this.add(btnEnviar, c);
-       
-       
-       
-        
+
         getControl().cambioLineasControl();
         repaint();
     }
@@ -472,29 +327,6 @@ public class VistaWidgetSAP extends JPanel{
         return b;
     }
 
-    
-    private void procesarEnvio() {
-        
-        //AQUI SE ENVIA EL MENSAJE AL OPRIMIR EL BOTON ENVIAR , VA A CONTROLADORWIDGETRAM
-        
-   // this.btnEnviar.setActionCommand("openAssembler");
-    //this.btnEnviar.addActionListener((ActionListener) getControl2());
-    // Obtener la operación seleccionada del JComboBox
-    String operacionSeleccionada = comboOperaciones.getSelectedItem().toString();
-    // Obtener el registro 1
-    String Registro1 = comboRegistro1.getSelectedItem().toString();
-    // Obtener el registro 2
-    String Registro2 = comboRegistro2.getSelectedItem().toString();
-    // Obtener el texto ingresado en el JTextField
-    String textoIngresado = textField.getText();
-
-    // Mostrar un mensaje con la información recopilada
-    String mensaje = "Operación: " + operacionSeleccionada + "\nRegistro1: " + Registro1 + "\nRegistro2: " + Registro2 + "\nEspacio de memoria: " + textoIngresado;
-    JOptionPane.showMessageDialog(null, mensaje, "Mensaje de Envío", JOptionPane.INFORMATION_MESSAGE);
-}
-    
-    
-    
     public Modelo getModelo() {
         return modelo;
     }
@@ -506,15 +338,6 @@ public class VistaWidgetSAP extends JPanel{
         return control;
     }
 
-    
-     public ControladorWidgetRAM getControl2() {
-        if (control2 == null) {
-            control2 = new ControladorWidgetRAM();
-        }
-        return control2;
-     }
-    
-    
     public JLabel[] getBtns_bitsA() {
         return btns_bitsA;
     }

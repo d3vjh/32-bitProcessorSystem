@@ -10,6 +10,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import presentacion.Modelo;
@@ -21,6 +23,7 @@ public class VistaWidgetRAM extends JPanel {
     private VistaPanelCPU view;
     private GridBagConstraints c;
     private JButton[][] btnArrayBotones;
+    private int[][] btnArrayBotones1;
     private JButton btnLimpiarMemoria;
     private JButton btnMostrarOpcodes;
     private JButton btnCargarProgramaDemo;
@@ -28,6 +31,7 @@ public class VistaWidgetRAM extends JPanel {
     private JButton btnAssembler;
     private JButton btnResaltarMAR;
     private JPanel parentPanel;
+    private JScrollPane panelMemoria;
     private int valorMAR;
     private boolean debeResaltarMAR;
 
@@ -35,10 +39,11 @@ public class VistaWidgetRAM extends JPanel {
 
     // Constantes
     private static final Dimension buttonSize = new Dimension(22, 22);
-    private static final Dimension WIDGET_SIZE = new Dimension(10220, 10550);
-    public static final Color COLOR_ON = new Color(246, 203, 225);
-    public static final Color COLOR_OFF = new Color(246, 213, 203);
-    public static final Color COLOR_MAR = Color.gray;
+    private static final Dimension WIDGET_SIZE = new Dimension(490, 750);
+
+    public static final Color COLOR_ON = new Color(215, 204, 228);
+    public static final Color COLOR_OFF = new Color(139, 117, 183);
+    public static final Color COLOR_MAR = Color.white;
     public static final Border BOTTOM_BORDER = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK);
     public static final Border RIGHT_BORDER = BorderFactory.createMatteBorder(0, 0, 0, 1, Color.BLACK);
     public static final Border BOTTOM_RIGHT_BORDER = BorderFactory.createMatteBorder(0, 0, 1, 1, Color.BLACK);
@@ -56,18 +61,33 @@ public class VistaWidgetRAM extends JPanel {
 
         this.valorMAR = 0;
         this.parentPanel = parentPanel;
+        
+        
+        
+        panelMemoria= new JScrollPane(this, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        panelMemoria.setPreferredSize(new Dimension(640, 400));
+        
+        
 
         this.view = (VistaPanelCPU) parentPanel;
         this.debeResaltarMAR = true;
 
         // Agregar manejador del observador 
         this.sistema.getRAM().addRAMObserver(getControl());
+        
 
         // Crea el array de botones que representan cada bit en cada posición de memory
-        btnArrayBotones = new JButton[16][8]; // 16 posiciones de 8 bit cada una
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 8; j++) {
-                this.btnArrayBotones[i][j] = new JButton("" + getControl().buscarEnRAM(i, 7 - j));
+        btnArrayBotones = new JButton[64][16]; // 16 posiciones de 8 bit cada una
+        /*btnArrayBotones1 = new int[16777215][16]; // 16 posiciones de 8 bit cada una
+        for (int i = 0; i < 16777215; i++) {
+            for (int j = 0; j < 16; j++) {
+                this.btnArrayBotones1[i][j] = getControl().buscarEnRAM(i, 15 - j);
+                //this.btnArrayBotones1[i][j].setPreferredSize(buttonSize);
+            }
+        }*/
+        for (int i = 0; i < 64; i++) {
+            for (int j = 0; j < 16; j++) {
+                this.btnArrayBotones[i][j] = new JButton("" + getControl().buscarEnRAM(i, 15 - j));
                 this.btnArrayBotones[i][j].setPreferredSize(buttonSize);
                 this.btnArrayBotones[i][j].setActionCommand(i + "," + j);
                 this.btnArrayBotones[i][j].addActionListener(getControl());
@@ -78,7 +98,7 @@ public class VistaWidgetRAM extends JPanel {
         }
 
         // size
-        this.setPreferredSize(WIDGET_SIZE);
+        
         this.setBackground(VistaPanelCPU.VIEW_BACKGROUND_COLOR);
 
         // Layout
@@ -89,7 +109,7 @@ public class VistaWidgetRAM extends JPanel {
         // Botón borrar RAM 
         c.gridx = 1;
         c.gridy = 0;
-        c.gridwidth = 9;
+        c.gridwidth = 7;
         this.btnLimpiarMemoria = new JButton("Borrar memoria");
         this.btnLimpiarMemoria.setActionCommand("clearmem");
         this.btnLimpiarMemoria.addActionListener(getControl());
@@ -98,7 +118,7 @@ public class VistaWidgetRAM extends JPanel {
         // Botón OPCodes 
         c.gridx = 1;
         c.gridy = 1;
-        c.gridwidth = 9;
+        c.gridwidth = 7;
         this.btnMostrarOpcodes = new JButton("Mostrar Códigos de Operación");
         this.btnMostrarOpcodes.setActionCommand("showopcodes");
         this.btnMostrarOpcodes.addActionListener(getControl());
@@ -107,7 +127,7 @@ public class VistaWidgetRAM extends JPanel {
         // Botón carga programa demo
         c.gridx = 1;
         c.gridy = 2;
-        c.gridwidth = 9;
+        c.gridwidth = 7;
         this.btnCargarProgramaDemo = new JButton("Cargar Programa demo");
         this.btnCargarProgramaDemo.setActionCommand("loadcountprogram");
         this.btnCargarProgramaDemo.addActionListener(getControl());
@@ -116,7 +136,7 @@ public class VistaWidgetRAM extends JPanel {
         // Botón analizar programa 
         c.gridx = 1;
         c.gridy = 3;
-        c.gridwidth = 9;
+        c.gridwidth = 7;
         this.btnAnalizarPrograma = new JButton("Analizar Programa");
         this.btnAnalizarPrograma.setActionCommand("analyzeProgram");
         this.btnAnalizarPrograma.addActionListener(getControl());
@@ -125,7 +145,7 @@ public class VistaWidgetRAM extends JPanel {
         // Botón assembler 
         c.gridx = 1;
         c.gridy = 4;
-        c.gridwidth = 9;
+        c.gridwidth = 7;
         this.btnAssembler = new JButton("Assembler");
         this.btnAssembler.setActionCommand("openAssembler");
         this.btnAssembler.addActionListener(getControl());
@@ -134,7 +154,7 @@ public class VistaWidgetRAM extends JPanel {
         // Botón resaltar posición de memoria respecto al MAR 
         c.gridx = 1;
         c.gridy = 5;
-        c.gridwidth = 9;
+        c.gridwidth = 7;
         this.btnResaltarMAR = new JButton(this.debeResaltarMAR ? MAR_ON_LABEL : MAR_OFF_LABEL);
         this.btnResaltarMAR.setActionCommand("toggleMAR");
         this.btnResaltarMAR.addActionListener(getControl());
@@ -150,20 +170,20 @@ public class VistaWidgetRAM extends JPanel {
         tmp.setBorder(FULL_BORDER);
         this.add(tmp, c);
 
-        // El contenido de la memoria
-        c.gridx = 4;
+       // El contenido de la memoria
+        c.gridx = 0;
         c.gridwidth = 1;
         c.fill = GridBagConstraints.BOTH;
-        for (int i = 1; i <= 16; i++) {
+        for (int i = 1; i <= 64; i++) {
             c.gridx = 1;
             c.gridy = i + 5 + 1;
 
-            String n = String.format("%4s", Integer.toBinaryString(i - 1)).replace(" ", "0");
+            String n = String.format("%6s", Integer.toBinaryString(i - 1)).replace(" ", "0");
             JLabel tmp1 = new JLabel(" [" + n + "] ");
             tmp1.setBorder(FULL_BORDER);
             this.add(tmp1, c);
 
-            for (int j = 2; j < 10; j++) {
+        for (int j = 2; j < 18; j++) {  
                 c.gridx = j;
                 this.add(btnArrayBotones[c.gridy - 1 - 5 - 1][j - 2], c);
             }
@@ -177,7 +197,7 @@ public class VistaWidgetRAM extends JPanel {
         // Agregue el borde inferior a la visualización de RAM
         for (int i = 0; i < this.btnArrayBotones[0].length; i++) {
             // La pieza inferior derecha tiene un borde especial
-            if (i == 14) {
+            if (i == 7) {
                 this.btnArrayBotones[this.btnArrayBotones.length - 1][i]
                         .setBorder(BOTTOM_RIGHT_BORDER);
             } else {
@@ -186,6 +206,7 @@ public class VistaWidgetRAM extends JPanel {
             }
         }
         getControl().cambioMAR(this.valorMAR);
+        
         repaint();
     }
 
@@ -240,4 +261,16 @@ public class VistaWidgetRAM extends JPanel {
         return sistema;
     }
 
+    public int[][] getBtnArrayBotones1() {
+        return btnArrayBotones1;
+    }
+
+    public void setBtnArrayBotones1(int[][] btnArrayBotones1) {
+        this.btnArrayBotones1 = btnArrayBotones1;
+    }
+    public JScrollPane getScrollPanel(){
+        return panelMemoria;
+    }
+    
+    
 }

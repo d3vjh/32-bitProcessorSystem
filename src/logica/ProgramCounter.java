@@ -4,8 +4,8 @@ import interfaces.IRegistro;
 
 public class ProgramCounter implements IRegistro {
     
-    // Utiliza un byte para almacenar el valor del contador de programa de 4 bits. 
-    // Solo se utilizarán los 4 bits menos significativos del byte, ya que se solo 
+    // Utiliza un int para almacenar el valor del contador de programa de 4 bits. 
+    // Solo se utilizarán los 4 bits menos significativos del int, ya que se solo 
     // se direccionarán 16 posiciones de memoria, pero el propio PC mantendrá 8 bits.
     private int valor;
 
@@ -26,7 +26,7 @@ public class ProgramCounter implements IRegistro {
 
     // Incrementa el contador del programa
     public void activarConteo() {
-        if (this.valor == 15) {
+        if (this.valor == 63) { //Aquí deberiamos cambiarlo a 255
             // Si el PC ya está en 15, reinícielo ya que eso representa un desbordamiento de 4 bits
             this.valor = 0;
         } else {

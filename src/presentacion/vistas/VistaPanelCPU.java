@@ -34,7 +34,7 @@ public class VistaPanelCPU extends JPanel{
     private GridBagConstraints c;       
 
     // Constants
-    public static final Color VIEW_BACKGROUND_COLOR = new Color(185, 179, 192);    
+    public static final Color VIEW_BACKGROUND_COLOR = new Color(141, 228, 255);    
         
     public VistaPanelCPU(Modelo m) {
         this.modelo = m;

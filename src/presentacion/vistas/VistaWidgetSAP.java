@@ -52,11 +52,11 @@ public class VistaWidgetSAP extends JPanel{
     private ControladorWindgetSAP control;
     
     // Constantes
-    public static final Dimension BUTTON_SIZE = new Dimension(22, 22);
+    public static final Dimension BUTTON_SIZE = new Dimension(30, 22);
     public static final Dimension WIDGET_SIZE = new Dimension(625, 500);
     public static final Color BUTTON_UNSELECTED_BG = new Color(238, 238, 238);
-    public static final Color BUTTON_SELECTED_BG = new Color(113, 76, 201);
-    public static final Color COLOR_BACKGROUND = new Color(224, 224, 224);
+    public static final Color BUTTON_SELECTED_BG = new Color(138, 196, 255);
+    public static final Color COLOR_BACKGROUND = new Color(143, 242, 238);
     public static final Color WIDGET_BORDER_COLOR = Color.black;
     
     private final Modelo modelo;    
@@ -204,11 +204,11 @@ public class VistaWidgetSAP extends JPanel{
         c.gridy = 18;
         for (int i = 0; i < 16; i++) {
             btns_bitsControl[i].setBackground(BUTTON_UNSELECTED_BG);
-            if (i == 8) {
+            if (i == 16) {
                 c.gridy++;
                 c.gridx = 1;
-            } else if (i >= 8) {
-                c.gridx = i - 7;
+            } else if (i >= 16) {
+                c.gridx = i - 15;
             } else {
                 c.gridx = i + 1;
             }

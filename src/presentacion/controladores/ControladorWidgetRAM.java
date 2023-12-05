@@ -152,19 +152,20 @@ public class ControladorWidgetRAM implements interfaces.IRAMObserver, ActionList
         // Si el usuario hace clic en el botón Mostrar los códigos de operación
         if (e.getActionCommand().contentEquals("showopcodes")) {
             EventLog.getEventLog().addEntrada("=============");
-            EventLog.getEventLog().addEntrada("NOP\t000000");
-            EventLog.getEventLog().addEntrada("LDA\t000001");
-            EventLog.getEventLog().addEntrada("ADD\t000010");
-            EventLog.getEventLog().addEntrada("SUB\t000011");
-            EventLog.getEventLog().addEntrada("STA\t000100");
-            EventLog.getEventLog().addEntrada("LDI\t000101");
-            EventLog.getEventLog().addEntrada("JMP\t000110");
-            EventLog.getEventLog().addEntrada("JC\t000111");
-            EventLog.getEventLog().addEntrada("JZ\t001000");
-            EventLog.getEventLog().addEntrada("OUT\t001110");
-            EventLog.getEventLog().addEntrada("HLT\t001111");
-            EventLog.getEventLog().addEntrada("INP\t010000");
-            EventLog.getEventLog().addEntrada("OTP\t010001");
+            EventLog.getEventLog().addEntrada("NOP\t00000000");
+            EventLog.getEventLog().addEntrada("LDA\t00000001");
+            EventLog.getEventLog().addEntrada("ADD\t00000010");
+            EventLog.getEventLog().addEntrada("SUB\t00000011");
+            EventLog.getEventLog().addEntrada("STA\t00000100");
+            EventLog.getEventLog().addEntrada("LDI\t00000101");
+            EventLog.getEventLog().addEntrada("JMP\t00000110");
+            EventLog.getEventLog().addEntrada("JC\t00000111");
+            EventLog.getEventLog().addEntrada("JZ\t00001000");
+            EventLog.getEventLog().addEntrada("OUT\t00001110");
+            EventLog.getEventLog().addEntrada("HLT\t00001111");
+            EventLog.getEventLog().addEntrada("INP\t00010000");
+            EventLog.getEventLog().addEntrada("OTP\t00010001");
+            
             EventLog.getEventLog().addEntrada("=============");
             return;
         }

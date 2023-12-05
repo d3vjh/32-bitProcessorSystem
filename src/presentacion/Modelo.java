@@ -34,7 +34,7 @@ public class Modelo {
             ventanaPrincipal.setTitle("Simulador SAP-1");
             ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             ventanaPrincipal.setContentPane(getPanelCPU());
-            ventanaPrincipal.setPreferredSize(new Dimension(1200, 768));
+           ventanaPrincipal.setPreferredSize(new Dimension(2100, 800));           
             ventanaPrincipal.setResizable(true);
         }
         return ventanaPrincipal;

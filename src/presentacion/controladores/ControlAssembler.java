@@ -72,7 +72,7 @@ public class ControlAssembler implements ActionListener {
         }
 
         // Obtenga la RAM de SAP
-        byte[] ram = this.sistema.getRAM().getData();
+        int[] ram = this.sistema.getRAM().getData();
 
         // Obtenga el último programa compilado, como una matriz de cadenas
         String[] program = vistaAssembler.getLblSalida().getText().split("<br>");
@@ -93,7 +93,7 @@ public class ControlAssembler implements ActionListener {
 
     private void decompilar() {
         // Obtener el contenido de ram
-        byte[] ram = this.sistema.getRAM().getData();
+        int[] ram = this.sistema.getRAM().getData();
 
         // Escribe el contenido de la RAM en el área de salida
         String out = "<html> [Dirección] Binario / Decimal<br>";

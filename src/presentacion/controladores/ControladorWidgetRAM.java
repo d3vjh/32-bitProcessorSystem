@@ -29,6 +29,7 @@ public class ControladorWidgetRAM implements interfaces.IRAMObserver, ActionList
 
     @Override
     // Si un valor en la memoria ha cambiado, entonces hay que redibujar
+    // Nos toca cambiarlo, para que 
     public void cambiaValorRAM(int address) {
 
         // Iterar sobre todos los bits en la posición de memoria actual
@@ -60,7 +61,7 @@ public class ControladorWidgetRAM implements interfaces.IRAMObserver, ActionList
         }
     }
 
-    public void cambioMAR(byte v) {
+    public void cambioMAR(int v) {
         // Si no estamos en modo resaltado
         if (!widgetRAM.isDebeResaltarMAR()) {
             cambiaValorRAM(v);
@@ -135,7 +136,7 @@ public class ControladorWidgetRAM implements interfaces.IRAMObserver, ActionList
         // Si el usuario hace clic en el botón borrar memoria
         if (e.getActionCommand().contentEquals("clearmem")) {
             // Obtener el contenido de la memoria
-            byte[] arr = this.sistema.getRAM().getData();
+            int[] arr = this.sistema.getRAM().getData();
 
             for (int i = 0; i < 16; i++) {
                 // Colocamos cada posición en 0
@@ -173,7 +174,7 @@ public class ControladorWidgetRAM implements interfaces.IRAMObserver, ActionList
         // Si el usuario hace clic en el botón Cargar programa de demostración
         if (e.getActionCommand().contentEquals("loadcountprogram")) {
             // Toma la representación interna de la RAM
-            byte[] arr = this.sistema.getRAM().getData();
+            int[] arr = this.sistema.getRAM().getData();
 
             // Primero borramos la memoria
             for (int i = 0; i < 16; i++) {
@@ -205,7 +206,7 @@ public class ControladorWidgetRAM implements interfaces.IRAMObserver, ActionList
         // Si el usuario hace clic en el botón enviar
           if (e.getActionCommand().contentEquals("Enviar")) {
             // Toma la representación interna de la RAM
-            byte[] arr = this.sistema.getRAM().getData();
+            int[] arr = this.sistema.getRAM().getData();
 
             // Primero borramos la memoria
             for (int i = 0; i < 16; i++) {
@@ -247,7 +248,7 @@ public class ControladorWidgetRAM implements interfaces.IRAMObserver, ActionList
         // Obtener el valor actual del bit agregar la posición modificada
         int currVal = buscarEnRAM(address, bitPos);
         // Obtenga el valor actual de la memoria en la dirección especificada
-        byte memVal = this.sistema.getRAM().getData()[address];
+        int memVal = this.sistema.getRAM().getData()[address];
 
         // Determinar si necesitamos restar o sumar
         byte newVal;

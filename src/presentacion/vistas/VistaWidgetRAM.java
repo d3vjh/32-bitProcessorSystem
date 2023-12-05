@@ -28,7 +28,7 @@ public class VistaWidgetRAM extends JPanel {
     private JButton btnAssembler;
     private JButton btnResaltarMAR;
     private JPanel parentPanel;
-    private byte valorMAR;
+    private int valorMAR;
     private boolean debeResaltarMAR;
 
     private ControladorWidgetRAM control;
@@ -177,7 +177,7 @@ public class VistaWidgetRAM extends JPanel {
         // Agregue el borde inferior a la visualización de RAM
         for (int i = 0; i < this.btnArrayBotones[0].length; i++) {
             // La pieza inferior derecha tiene un borde especial
-            if (i == 7) {
+            if (i == 14) {
                 this.btnArrayBotones[this.btnArrayBotones.length - 1][i]
                         .setBorder(BOTTOM_RIGHT_BORDER);
             } else {
@@ -216,11 +216,11 @@ public class VistaWidgetRAM extends JPanel {
         this.btnResaltarMAR = highlightMarButton;
     }
 
-    public byte getValorMAR() {
+    public int getValorMAR() {
         return valorMAR;
     }
 
-    public void setValorMAR(byte v) {
+    public void setValorMAR(int v) {
         this.valorMAR = v;
     }
 

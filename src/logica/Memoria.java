@@ -12,7 +12,7 @@ public class Memoria {
     private int capacidadMemoria; // capacidad de la memoria en bytes
     
     // Mantener los valores de RAM como un arreglo de bytes
-    private byte[] data;
+    private int[] data;
 
     // La memoria mantiene el direccionamiento como una referencia al registro de direcciones de memoria.
     private IRegistro MAR;
@@ -21,21 +21,21 @@ public class Memoria {
     private List<IRAMObserver> observers;
 
     public Memoria(IRegistro MAR) {
-        capacidadMemoria = 16;
+        capacidadMemoria = 32;
         
-        this.data = new byte[capacidadMemoria];
+        this.data = new int[capacidadMemoria];
         this.MAR = MAR;
         this.observers = new ArrayList<IRAMObserver>();
 
         // Cargar valores basura en la memoria (para probar)
         for (int i = 0; i < 16; i++) {
-            this.data[i] = (byte) ThreadLocalRandom.current().nextInt(0, 254);
+            this.data[i] = ThreadLocalRandom.current().nextInt(0, 254);
         }
 
     }
 
     // Carga un valor en la dirección de memoria contenida en el registro de direcciones de memoria MAR
-    public void memoryIn(byte val) {
+    public void memoryIn(int val) {
         this.data[this.MAR.getValor()] = val;
         this.notifyObservers(this.MAR.getValor());
     }    
@@ -51,7 +51,7 @@ public class Memoria {
         this.notifyObservers(address);
     }
     // Devuleve el contenido de la memoria
-    public byte[] getData() {
+    public int[] getData() {
         return this.data;
     }
 

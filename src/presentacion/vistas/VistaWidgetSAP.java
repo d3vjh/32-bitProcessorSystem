@@ -334,8 +334,8 @@ public class VistaWidgetSAP extends JPanel{
         //  PC
         c.gridy = 10;
         c.gridx = 1;
-        btns_bitsPC = new JLabel[4];
-        for (int i = 0; i <= 3; i++) {
+        btns_bitsPC = new JLabel[16];
+        for (int i = 0; i <= 15; i++) {
             c.gridx = i + 1;
             JLabel b = crearLabel("0"); 
             this.add(b, c);

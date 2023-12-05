@@ -7,7 +7,7 @@ public class ProgramCounter implements IRegistro {
     // Utiliza un byte para almacenar el valor del contador de programa de 4 bits. 
     // Solo se utilizarán los 4 bits menos significativos del byte, ya que se solo 
     // se direccionarán 16 posiciones de memoria, pero el propio PC mantendrá 8 bits.
-    private byte valor;
+    private int valor;
 
     public ProgramCounter() {
         this.valor = 0;
@@ -15,12 +15,12 @@ public class ProgramCounter implements IRegistro {
 
     @Override
     // Carga un valor en el contador de programa
-    public void setValor(byte v) {
+    public void setValor(int v) {
         this.valor = v;
     }
 
     @Override
-    public byte getValor() {
+    public int getValor() {
         return this.valor;
     }
 
